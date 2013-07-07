@@ -3,7 +3,7 @@ body {
 }
 
 .hal {
-  background-image: url(hal-9000-o.gif);
+  background-image: url(../img/hal-9000-o.gif);
   background-repeat: no-repeat;
   width: 310px;
   height: 550px;

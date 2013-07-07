@@ -3,6 +3,7 @@
 	// 	[''. ''] // ['input', 'response']
 	// ];
 	var final_transcript = '';
+	//addAudio('hal9000');
 
 	if (!('webkitSpeechRecognition' in window)) {
 		console.log("No Speech");
@@ -10,8 +11,6 @@
 		var recognition = new webkitSpeechRecognition();
 		recognition.continuous = true;
 		recognition.interimResults = true;
-		// Default Lang is browser based
-		// recognition.lang = select_dialect.value; // Set lang
 
 		recognition.onstart = function() {
 			// To do when starts
@@ -29,17 +28,12 @@
 		      }
 		    }
 
-		    if(final_transcript == 'testing') {
-		    	console.log("thanks hal");
-		    	// Think of way to clear the transcript
-		    }
+		    // Work out better way to do this and reset for other commands
+		    if(final_transcript == 'open the pod bay doors') {
+		    	addAudio('cantdo');
 
-		    // final_transcript = capitalize(final_transcript);
-		    // final_span.innerHTML = linebreak(final_transcript);
-		    // interim_span.innerHTML = linebreak(interim_transcript);
-		    // if (final_transcript || interim_transcript) {
-		    //   showButtons('inline-block');
-		    // }
+	    		final_transcript = '';
+		    }
 		};
 
 		recognition.onerror = function(event) {
@@ -56,5 +50,16 @@
 	function matchHal() {
 		// Check against input
 		// if match give response wav
+	}
+
+	function addAudio(wav) {
+		var audioTag = document.createElement("audio");
+	    audioTag.src = 'assets/audio/' + wav + '.wav';
+	    audioTag.loop = false;
+
+	    audioTag.addEventListener("ended", function() { document.body.removeChild(audioTag); }, true);
+
+	    document.body.appendChild(audioTag);
+		audioTag.play();
 	}
 })();
