@@ -1,0 +1,11 @@
+body {
+  background: #000;
+}
+
+.hal {
+  background-image: url(hal-9000-o.gif);
+  background-repeat: no-repeat;
+  width: 310px;
+  height: 550px;
+  margin: 0 auto;
+}
