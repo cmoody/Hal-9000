@@ -9,7 +9,7 @@
 		console.log("No Speech");
 	}else{
 		var recognition = new webkitSpeechRecognition();
-		recognition.continuous = true;
+		recognition.continuous = true; // False causes onend to happen with pause
 		recognition.interimResults = true;
 
 		recognition.onstart = function() {
@@ -40,7 +40,7 @@
 			// Throw errors
 		};
 
-		recognition.onend = function onend() {
+		recognition.onend = function() {
 			// Reset details
 		};
 
