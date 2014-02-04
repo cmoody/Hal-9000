@@ -9,11 +9,11 @@
 		console.log("No Speech");
 	}else{
 		var recognition = new webkitSpeechRecognition();
-		var msg = new SpeechSynthesisUtterance();
+		var msg = new SpeechSynthesisUtterance(); // Add in compatibility check
 		var voices = window.speechSynthesis.getVoices();
 		recognition.continuous = true; // False causes onend to happen with pause
 		recognition.interimResults = true;
-		msg.voice = voices[1];
+		msg.voice = voices[12];
 		msg.lang = 'en-US';
 
 		recognition.onstart = function() {
@@ -33,12 +33,14 @@
 		    }
 
 		    // Work out better way to do this and reset for other commands
+		    // Bad delay
 		    if(final_transcript == 'open the pod bay doors') {
 		    	msg.text = 'I\'m afraid I cant do that dave.';
 		    	speechSynthesis.speak(msg);
 
 	    		final_transcript = '';
 		    }
+		    console.log(interim_transcript);
 		};
 
 		recognition.onerror = function(event) {
