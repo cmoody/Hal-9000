@@ -10,12 +10,21 @@ module.exports = function(grunt) {
           keepalive: true
         }
       }
+    },
+
+    'gh-pages': {
+      options: {
+        base: 'src'
+      },
+      src: ['**/*']
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-gh-pages');
 
   // Default task(s).
   grunt.registerTask('default', ['connect']);
+  grunt.registerTask('deploy', ['gh-pages']);
 
 };
