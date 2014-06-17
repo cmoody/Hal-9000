@@ -23,6 +23,16 @@ body {
 
 }
 
+.info {
+	background-color: rgba(255,255,255, 0.4);
+	margin: 0 auto;
+	width: 960px;
+	padding: 10px;
+	height: 75px;
+	text-align: center;
+	border-radius: 10px;
+}
+
 .hal {
   background-image: url(../img/hal-9000-o.gif);
   background-repeat: no-repeat;
