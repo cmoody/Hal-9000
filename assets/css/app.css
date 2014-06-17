@@ -1,0 +1,32 @@
+body {
+  background: #000;
+}
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.col1, .col2, .col3 {
+
+}
+
+.col1 {
+
+}
+
+.col2 {
+
+}
+
+.col3 {
+
+}
+
+.hal {
+  background-image: url(../img/hal-9000-o.gif);
+  background-repeat: no-repeat;
+  width: 310px;
+  height: 550px;
+  margin: 0 auto;
+}
