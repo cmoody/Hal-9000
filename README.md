@@ -5,6 +5,8 @@ HTML5 Speech API Experiment
 
 As of 2/4/14 this only works in Chrome Canary for SpeechSynthesisUtterance
 
+##[http://cmoody.github.io/Hal-9000](Demo)
+
 #Setup
 Install Modules
 ```node
